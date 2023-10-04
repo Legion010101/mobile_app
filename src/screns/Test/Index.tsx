@@ -18,7 +18,9 @@ const Test = ({ route, log, navigation }: { route?: any; log?: number; navigatio
           Text container: the text will be inline if the space allowed itText container: the text will be inline if the
           space allowed itText container: the text will be inline if the space allowed it
         </Text>
-        <Text onPress={onClick}>{`вы кликнулиs ${counter} раз из ${itemId}`}</Text>
+        <Text onPress={onClick}>{`вы кликнулиsы ${counter} раз из ${itemId}`}</Text>
+        <Button title="Create post" onPress={() => navigation.navigate("CreatePost")} />
+        <Text style={{ margin: 10 }}>Post: {route.params?.post}</Text>
         <Button title={"click me"} onPress={onClick} />
         <Button title={"change params"} onPress={() => navigation.setParams({ itemId: 42 })} />
         <Button title={"change options"} onPress={() => navigation.setOptions({ title: "new title" })} />

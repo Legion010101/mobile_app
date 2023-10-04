@@ -26,6 +26,7 @@ const AppElement = ({ navigation }: { navigation: any }) => {
           })
         }
       />
+      <Button title={"Settings"} onPress={() => navigation?.navigate("Settings")} />
       <StatusBar
         barStyle={isDarkMode ? "light-content" : "dark-content"}
         backgroundColor={backgroundStyle.backgroundColor}
