@@ -8,8 +8,9 @@ import {
 } from "react-native/Libraries/NewAppScreen"
 import React from "react"
 import Section from "./Section"
+import { PropsAppElement } from "../../feature/routing"
 
-const AppElement = ({ navigation }: { navigation: any }) => {
+const AppElement = ({ navigation }: PropsAppElement) => {
   const isDarkMode = useColorScheme() === "dark"
 
   const backgroundStyle = {
@@ -22,11 +23,11 @@ const AppElement = ({ navigation }: { navigation: any }) => {
         onPress={() =>
           navigation?.navigate("Test", {
             itemId: 86,
-            otherParam: "anything you want here"
+            post: "anything you want here"
           })
         }
       />
-      <Button title={"Settings"} onPress={() => navigation?.navigate("Settings")} />
+      <Button title={"Settings"} onPress={() => navigation?.navigate("Settings", { userId: "4" })} />
       <StatusBar
         barStyle={isDarkMode ? "light-content" : "dark-content"}
         backgroundColor={backgroundStyle.backgroundColor}
